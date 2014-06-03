@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20140603 20:09:27.154" generator="Robot 2.8.4 (Python 2.7.6 on linux2)">
+<suite source="/usr/testing/Google_mail_login_testing.robot" id="s1" name="Google mail login testing">
+<test id="s1-t1" name="invalid creds">
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://accounts.google.com/</arg>
+<arg>browser=ff</arg>
+</arguments>
+<msg timestamp="20140603 20:09:27.214" level="INFO">Opening browser 'ff' to base url 'https://accounts.google.com/'</msg>
+<status status="PASS" endtime="20140603 20:09:31.189" starttime="20140603 20:09:27.214"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=Email</arg>
+<arg>${INVALID_USER}</arg>
+</arguments>
+<msg timestamp="20140603 20:09:31.190" level="INFO">Typing text 'MALKAAA' into text field 'name=Email'</msg>
+<status status="PASS" endtime="20140603 20:09:32.025" starttime="20140603 20:09:31.189"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=Passwd</arg>
+<arg>${INVALID_PWD}</arg>
+</arguments>
+<msg timestamp="20140603 20:09:32.026" level="INFO">Typing text '77741' into text field 'name=Passwd'</msg>
+<status status="PASS" endtime="20140603 20:09:32.271" starttime="20140603 20:09:32.026"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>name=signIn</arg>
+</arguments>
+<msg timestamp="20140603 20:09:32.272" level="INFO">Clicking button 'name=signIn'.</msg>
+<status status="PASS" endtime="20140603 20:09:33.735" starttime="20140603 20:09:32.271"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>The email or password you entered is incorrect</arg>
+</arguments>
+<msg timestamp="20140603 20:09:33.916" level="INFO">Current page contains text 'The email or password you entered is incorrect'.</msg>
+<status status="PASS" endtime="20140603 20:09:33.916" starttime="20140603 20:09:33.736"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Close All Browsers">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20140603 20:09:33.954" starttime="20140603 20:09:33.916"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20140603 20:09:33.954" critical="yes" starttime="20140603 20:09:27.213"></status>
+</test>
+<test id="s1-t2" name="valid creds">
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://accounts.google.com/</arg>
+<arg>browser=FF</arg>
+</arguments>
+<msg timestamp="20140603 20:09:33.955" level="INFO">Opening browser 'FF' to base url 'https://accounts.google.com/'</msg>
+<status status="PASS" endtime="20140603 20:09:37.707" starttime="20140603 20:09:33.955"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=Email</arg>
+<arg>${VALID_USER}</arg>
+</arguments>
+<msg timestamp="20140603 20:09:37.708" level="INFO">Typing text 'koganqog' into text field 'name=Email'</msg>
+<status status="PASS" endtime="20140603 20:09:38.426" starttime="20140603 20:09:37.708"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=Passwd</arg>
+<arg>${VALID_PWD}</arg>
+</arguments>
+<msg timestamp="20140603 20:09:38.427" level="INFO">Typing text 'Asd!08201455' into text field 'name=Passwd'</msg>
+<status status="PASS" endtime="20140603 20:09:38.870" starttime="20140603 20:09:38.426"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>name=signIn</arg>
+</arguments>
+<msg timestamp="20140603 20:09:38.871" level="INFO">Clicking button 'name=signIn'.</msg>
+<status status="PASS" endtime="20140603 20:09:40.334" starttime="20140603 20:09:38.870"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Not Contain">
+<doc>Verifies the current page does not contain `text`.</doc>
+<arguments>
+<arg>The email or password you entered is incorrect</arg>
+</arguments>
+<msg timestamp="20140603 20:09:40.986" level="INFO">Current page does not contain text 'The email or password you entered is incorrect'.</msg>
+<status status="PASS" endtime="20140603 20:09:40.986" starttime="20140603 20:09:40.335"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140603 20:09:42.125" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20140603 20:09:42.125" starttime="20140603 20:09:40.987"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Close All Browsers">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20140603 20:09:42.151" starttime="20140603 20:09:42.125"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20140603 20:09:42.151" critical="yes" starttime="20140603 20:09:33.954"></status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20140603 20:09:42.151" starttime="20140603 20:09:27.154"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="2" id="s1" name="Google mail login testing">Google mail login testing</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
